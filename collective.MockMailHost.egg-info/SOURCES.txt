@@ -11,7 +11,15 @@ collective.MockMailHost.egg-info/not-zip-safe
 collective.MockMailHost.egg-info/paster_plugins.txt
 collective.MockMailHost.egg-info/requires.txt
 collective.MockMailHost.egg-info/top_level.txt
+collective/MockMailHost/MailHost_icon.gif
 collective/MockMailHost/MockMailHost.py
 collective/MockMailHost/__init__.py
+collective/MockMailHost/configure.zcml
 collective/MockMailHost/setuphandlers.py
 collective/MockMailHost/tests.py
+collective/MockMailHost/profiles/default/import_steps.xml
+collective/MockMailHost/profiles/default/toolset.xml
+docs/HISTORY.txt
+docs/INSTALL.txt
+docs/LICENSE.GPL
+docs/LICENSE.txt
