@@ -26,6 +26,23 @@ Send email
     ... Thank you"""
 
     >>> self.portal.MailHost.send(msg)
+
+    >>> len(self.portal.MailHost.messages)
+    1
+
     >>> self.portal.MailHost.messages[0]
     'To: member@example.com...'
 
+    >>> self.portal.MailHost.messages[0]
+    '...Dear Sir:...'
+
+    >>> self.portal.MailHost.messages[0]
+    '...Thank you...'
+
+    >>> self.portal.MailHost.messages[0]
+    '...Dear Sir:...Thank you...'
+
+    >>> self.portal.MailHost.reset()
+
+    >>> len(self.portal.MailHost.messages)
+    0
