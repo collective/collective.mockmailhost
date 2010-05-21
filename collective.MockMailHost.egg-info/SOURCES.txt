@@ -14,10 +14,15 @@ collective.MockMailHost.egg-info/top_level.txt
 collective/MockMailHost/MailHost_icon.gif
 collective/MockMailHost/MockMailHost.py
 collective/MockMailHost/__init__.py
+collective/MockMailHost/config.py
 collective/MockMailHost/configure.zcml
 collective/MockMailHost/setuphandlers.py
 collective/MockMailHost/profiles/default/import_steps.xml
 collective/MockMailHost/profiles/default/toolset.xml
+collective/MockMailHost/tests/MockMailHostTC.py
+collective/MockMailHost/tests/SendEmail.txt
+collective/MockMailHost/tests/__init__.py
+collective/MockMailHost/tests/testFunctional.py
 docs/HISTORY.txt
 docs/INSTALL.txt
 docs/LICENSE.GPL
