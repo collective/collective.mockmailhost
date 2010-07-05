@@ -4,7 +4,8 @@ Changelog
 0.3 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- Added file for generic setup various handlers
+  [sureshvv]
 
 
 0.2 (2010-05-21)
