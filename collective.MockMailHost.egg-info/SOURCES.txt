@@ -17,7 +17,9 @@ collective/MockMailHost/__init__.py
 collective/MockMailHost/config.py
 collective/MockMailHost/configure.zcml
 collective/MockMailHost/setuphandlers.py
+collective/MockMailHost/version.txt
 collective/MockMailHost/profiles/default/import_steps.xml
+collective/MockMailHost/profiles/default/mockmailhost_various.txt
 collective/MockMailHost/profiles/default/toolset.xml
 collective/MockMailHost/tests/MockMailHostTC.py
 collective/MockMailHost/tests/SendEmail.txt

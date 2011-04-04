@@ -1,6 +1,6 @@
 Metadata-Version: 1.0
 Name: collective.MockMailHost
-Version: 0.2
+Version: 0.3dev
 Summary: Used for integration testing with Plone
 Home-page: http://svn.plone.org/svn/collective/
 Author: UNKNOWN
@@ -21,18 +21,25 @@ Description: Introduction
         Changelog
         =========
         
+        0.3 (unreleased)
+        ----------------
+        
+        - Added file for generic setup various handlers
+          [sureshvv]
+        
+        
         0.2 (2010-05-21)
         ----------------
         
         - Added tests
-        [sureshvv]
+          [sureshvv]
         
         
         0.1 (2010-05-16)
         ----------------
         
         - Initial release
-        [sureshvv]
+          [sureshvv]
         
 Platform: UNKNOWN
 Classifier: Framework :: Plone

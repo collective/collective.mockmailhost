@@ -46,3 +46,12 @@ Send email
 
     >>> len(self.portal.MailHost.messages)
     0
+
+    >>> self.portal.MailHost.reset()
+    >>> self.portal.MailHost.send(msg, mto='member@example.com', 
+    ...                                mfrom='admin@example.com')
+    >>> len(self.portal.MailHost.messages)
+    1
+
+    
+    
