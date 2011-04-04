@@ -2,20 +2,20 @@ from OFS.SimpleItem import SimpleItem
 from Globals import InitializeClass
 from persistent.list import PersistentList
 
-META_TYPE='MockMailHost'
+META_TYPE = 'MockMailHost'
 
 class MockMailHost(SimpleItem):
     """ Testable Emailer """
 
-    meta_type=META_TYPE
+    meta_type = META_TYPE
 
-    index_html=None
+    index_html = None
 
     def __init__(self):
         """Initialize a new MailHost instance """
         self.messages = PersistentList()
 
-    def send(self, msg):
+    def send(self, msg, **kwargs):
         """ store the mail """
         self.messages.append(msg)
 
