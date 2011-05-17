@@ -23,4 +23,6 @@ class MockMailHost(SimpleItem):
         """ resets messages """
         self.messages = PersistentList()
 
+    secureSend = send
+
 InitializeClass(MockMailHost)
