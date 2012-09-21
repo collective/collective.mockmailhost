@@ -15,7 +15,7 @@ class MockMailHost(SimpleItem):
         """Initialize a new MailHost instance """
         self.messages = PersistentList()
 
-    def send(self, msg, **kwargs):
+    def send(self, msg, *args, **kwargs):
         """ store the mail """
         self.messages.append(msg)
 
