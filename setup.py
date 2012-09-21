@@ -7,7 +7,7 @@ setup(name='collective.MockMailHost',
       version=version,
       description="Used for integration testing with Plone",
       long_description="\n".join([
-          open("README.txt").read(),
+          open("README.rst").read(),
           open(os.path.join("collective", "MockMailHost", "tests",
                             "SendEmail.txt")).read(),
           open(os.path.join("docs", "HISTORY.txt")).read(),
