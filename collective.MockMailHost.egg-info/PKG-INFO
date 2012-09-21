@@ -1,4 +1,4 @@
-Metadata-Version: 1.0
+Metadata-Version: 1.1
 Name: collective.MockMailHost
 Version: 0.4
 Summary: Used for integration testing with Plone
@@ -111,7 +111,7 @@ Description: Introduction
         0.3 (2011-04-04)
         ----------------
         
-        - Add **kwargs to MockMailHost's send method to support mto, mfrom, ... 
+        - Add ``**kwargs`` to MockMailHost's send method to support mto, mfrom, ... 
           keyword arguments as default MailHost does.  [saily]
         
         - Added file for generic setup various handlers
