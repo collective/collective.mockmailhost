@@ -1,7 +1,14 @@
 Changelog
 =========
 
-0.5 - Unreleased
+0.6 - Unreleased
+----------------
+
+- Behave more like ``collective.testcaselayer``'s MockMailHost.
+  [saily]
+
+
+0.5 - 2012-09-25
 ----------------
 
 - Remove ZopeSkel and Paster dependency from setup.py
