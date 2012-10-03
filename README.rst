@@ -5,9 +5,10 @@ Introduction
 from Plone_. Simply add this egg to your [test] runner section, and install
 this product through your ``Layer`` or ``TestCase``.
 
-.. note:: THIS IS FOR TESTING PURPOSE ONLY, do not use this product on your
-          running Plone site. It replaces the standard MailHost with a Mock
-          MailHost that you can poke at to check email content and recipients.
+Note
+  THIS IS FOR TESTING PURPOSE ONLY, do not use this product on your
+  running Plone site. It replaces the standard MailHost with a Mock
+  MailHost that you can poke at to check email content and recipients.
 
 Has been tested with Plone 4 but should also work with earlier versions.
 
