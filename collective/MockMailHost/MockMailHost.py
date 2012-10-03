@@ -1,28 +1,39 @@
-from OFS.SimpleItem import SimpleItem
-from Globals import InitializeClass
-from persistent.list import PersistentList
+# -*- coding: utf-8 -*-
+from Products.MailHost import MailHost
+import email.Message
+
+try:
+    from Products.SecureMailHost.SecureMailHost import SecureMailHost
+except ImportError:
+    SecureMailHost = object
 
 META_TYPE = 'MockMailHost'
 
-class MockMailHost(SimpleItem):
-    """ Testable Emailer """
+
+class MockMailHost(MailHost.MailHost, SecureMailHost):
 
     meta_type = META_TYPE
 
-    index_html = None
-
-    def __init__(self):
-        """Initialize a new MailHost instance """
-        self.messages = PersistentList()
-
-    def send(self, msg, *args, **kwargs):
-        """ store the mail """
-        self.messages.append(msg)
+    def __init__(self, id=''):
+        super(MockMailHost, self).__init__(id)
+        self.reset()
 
     def reset(self):
-        """ resets messages """
-        self.messages = PersistentList()
+        self.messages = []
+        self._p_changed = True
 
-    secureSend = send
+    def _send(self, mfrom, mto, messageText, debug=False):
+        if not isinstance(messageText, email.Message.Message):
+            message = email.message_from_string(messageText)
+        else:
+            message = messageText
+        self.messages.append(message)
+        self._p_changed = True
 
-InitializeClass(MockMailHost)
+    def pop(self, idx=-1):
+        result = self.messages.pop(idx)
+        self._p_changed = True
+        return result
+
+    def __len__(self):
+        return len(self.messages)
