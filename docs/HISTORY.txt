@@ -7,6 +7,9 @@ Changelog
 - Behave more like ``collective.testcaselayer``'s MockMailHost.
   [saily]
 
+- Documentation updates
+  [saily]
+
 
 0.5 - 2012-09-25
 ----------------
