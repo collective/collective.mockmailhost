@@ -68,4 +68,4 @@ Your test layer setup could look like this example below::
     MY_FIXTURE = MyLayer()
 
 .. _Plone: http://plone.org
-.. _`plone.app.testing`: http://pypi.python.org/plone.app.testing
+.. _`plone.app.testing`: http://pypi.python.org/pypi/plone.app.testing
