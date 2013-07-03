@@ -20,15 +20,33 @@ class MockMailHost(MailHost.MailHost, SecureMailHost):
 
     def reset(self):
         self.messages = []
+        self.msg_types = []
         self._p_changed = True
 
     def _send(self, mfrom, mto, messageText, debug=False):
-        if not isinstance(messageText, email.Message.Message):
+        if isinstance(messageText, email.Message.Message):
             message = email.message_from_string(messageText)
+        elif isinstance(messageText, email.message.Message):
+            message = messageText.as_string()
         else:
             message = messageText
         self.messages.append(message)
         self._p_changed = True
+
+    def send(self,
+             messageText,
+             mto=None,
+             mfrom=None,
+             subject=None,
+             encode=None,
+             immediate=False,
+             charset=None,
+             msg_type=None,
+            ):
+        self.msg_types.append(msg_type)
+        super(MockMailHost, self).send(messageText, mto, mfrom,
+             subject, encode, immediate, charset,
+             msg_type)
 
     def pop(self, idx=-1):
         result = self.messages.pop(idx)
