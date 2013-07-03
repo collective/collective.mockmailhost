@@ -4,6 +4,9 @@ Changelog
 0.6 - Unreleased
 ----------------
 
+- Track msg_type also.
+  [sureshvv]
+
 - Behave more like ``collective.testcaselayer``'s MockMailHost.
   [saily]
 
