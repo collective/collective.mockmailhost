@@ -4,7 +4,7 @@ Changelog
 0.7 (2013-07-05)
 ----------------
 
-- Nothing changed yet.
+- MANIFEST [sureshvv]
 
 
 0.6 (2013-07-03)
