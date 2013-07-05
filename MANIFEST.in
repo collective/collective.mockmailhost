@@ -1,2 +1,4 @@
-include *.rst
-include tests/*.txt
+recursive-include collective *
+recursive-include docs *
+include *
+global-exclude *.pyc
