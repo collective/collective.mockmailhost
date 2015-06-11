@@ -1,14 +1,10 @@
 from Products.Five.browser import BrowserView
-from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
+
 
 class MyView(BrowserView):
-
-    
-
+    """ view for mockmailhost """
     def __call__(self):
         context = self.context
-        request = self.request
-        id = int(request['id'])
-        if id < len(context.messages):
-            return context.messages[id]
+        if context.messages:
+            return context.pop(0)
         return 'NO MESSAGE'
