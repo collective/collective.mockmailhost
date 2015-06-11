@@ -6,7 +6,7 @@
     i18n_domain="collective.MockMailHost">
 
   <five:registerPackage package="." initialize=".initialize" />
-
+  <include package=".browser" />
   <genericsetup:registerProfile
       name="default"
       title="collective.MockMailHost"
