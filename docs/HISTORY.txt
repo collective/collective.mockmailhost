@@ -4,7 +4,7 @@ Changelog
 0.8 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- Add browser view for functional testing [Casecarsid]
 
 
 0.7 (2013-07-05)
