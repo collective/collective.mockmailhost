@@ -1,7 +1,7 @@
 Changelog
 =========
 
-0.9 (unreleased)
+0.9 (2015-07-10)
 ----------------
 
 - Clean up msg before sending. Otherwise Plone self registration
