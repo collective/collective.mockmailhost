@@ -42,11 +42,12 @@ class MockMailHost(MailHost.MailHost, SecureMailHost):
              immediate=False,
              charset=None,
              msg_type=None,
-            ):
+             ):
+        messageText = '\n'.join([x.strip() for x in messageText.split('\n')])
         self.msg_types.append(msg_type)
         super(MockMailHost, self).send(messageText, mto, mfrom,
-             subject, encode, immediate, charset,
-             msg_type)
+                                       subject, encode, immediate, charset,
+                                       msg_type)
 
     def pop(self, idx=-1):
         result = self.messages.pop(idx)
