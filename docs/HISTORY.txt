@@ -4,7 +4,8 @@ Changelog
 0.9 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- Clean up msg before sending. Otherwise Plone self registration
+  email does not work [sureshvv]
 
 
 0.8 (2015-06-13)
