@@ -43,7 +43,12 @@ class MockMailHost(MailHost.MailHost, SecureMailHost):
              charset=None,
              msg_type=None,
              ):
-        messageText = '\n'.join([x.strip() for x in messageText.split('\n')])
+
+        # messageText may be an MIMEText object, or something else.
+        # We onyl want to clean it up if it is a string.
+        if isinstance(messageText, (str, unicode)):
+            messageText = '\n'.join([x.strip() for x in messageText.split('\n')])
+
         self.msg_types.append(msg_type)
         super(MockMailHost, self).send(messageText, mto, mfrom,
                                        subject, encode, immediate, charset,
