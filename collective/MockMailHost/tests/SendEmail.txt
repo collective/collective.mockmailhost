@@ -31,25 +31,22 @@ Validate mailhost replacement
 Send email
 ----------
 
-    >>> to = "member@example.com"
-    >>> from = "admin@example.com"
+    >>> to_ = "member@example.com"
+    >>> from_ = "admin@example.com"
     >>> msg = """
     ...
     ... Dear Sir:
     ...
     ... Thank you"""
-    >>> self.portal.MailHost.send(msg, to, from)
+    >>> self.portal.MailHost.send(msg, to_, from_)
     >>> len(self.portal.MailHost.messages)
     1
-    >>> print self.portal.MailHost.messages[0].as_string()
-    ...
-    To: member@example.com
-    From: admin@example.com
-    ...
-    >>> print self.portal.MailHost.messages[0].as_string()
-    ...
-    Dear Sir:
-    ...
+    >>> 'To: member@example.com' in self.portal.MailHost.messages[0]
+    True
+    >>> 'From: admin@example.com' in self.portal.MailHost.messages[0]
+    True
+    >>> 'Dear Sir:' in self.portal.MailHost.messages[0]
+    True
     >>> self.portal.MailHost.reset()
     >>> len(self.portal.MailHost.messages)
     0
