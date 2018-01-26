@@ -1,6 +1,9 @@
 language: python
 sudo: false
-cache: pip
+cache:
+  pip: true
+  directories:
+    - eggs/
 python:
   - 2.7
 install:
