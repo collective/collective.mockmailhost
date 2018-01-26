@@ -29,8 +29,18 @@ setup(name='collective.MockMailHost',
       zip_safe=False,
       install_requires=[
           'setuptools',
+          'Products.GenericSetup',
+          'Products.MailHost',
+          'Products.CMFCore',
+          'Products.SecureMailHost',
           # -*- Extra requirements: -*-
       ],
+      extras_require={
+          'test': [
+              'zope.component',
+              'Products.PloneTestCase',
+          ],
+      },
       entry_points="""
       # -*- Entry points: -*-
 
