@@ -7,7 +7,7 @@ import os, sys
 import glob
 import doctest
 import unittest
-from Globals import package_home
+from App.Common import package_home
 from Testing.ZopeTestCase import FunctionalDocFileSuite as Suite
 
 from collective.MockMailHost.config import GLOBALS
