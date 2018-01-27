@@ -37,8 +37,9 @@ setup(name='collective.MockMailHost',
       ],
       extras_require={
           'test': [
+              'plone.app.testing',
+              'plone.testing',
               'zope.component',
-              'Products.PloneTestCase',
           ],
       },
       entry_points="""
