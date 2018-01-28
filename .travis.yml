@@ -11,3 +11,7 @@ install:
   - buildout
 script:
   - bin/test
+after_sucess:
+  - bin/coverage run ./bin/test
+  - bin/coverage xml -o coverage.xml
+  - coveralls
