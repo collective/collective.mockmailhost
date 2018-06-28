@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 from Products.MailHost import MailHost
-import email.Message
+
+import email.message
+import six
 
 try:
     from Products.SecureMailHost.SecureMailHost import SecureMailHost
@@ -24,10 +26,11 @@ class MockMailHost(MailHost.MailHost, SecureMailHost):
         self._p_changed = True
 
     def _send(self, mfrom, mto, messageText, debug=False):
-        if isinstance(messageText, email.Message.Message):
-            message = email.message_from_string(messageText)
-        elif isinstance(messageText, email.message.Message):
-            message = messageText.as_string()
+        if isinstance(messageText, email.message.Message):
+            if six.PY2:
+                message = messageText.as_string()
+            else:
+                message = email.message_from_string(messageText)
         else:
             message = messageText
         self.messages.append(message)
