@@ -49,7 +49,7 @@ class MockMailHost(MailHost.MailHost, SecureMailHost):
 
         # messageText may be an MIMEText object, or something else.
         # We onyl want to clean it up if it is a string.
-        if isinstance(messageText, (str, unicode)):
+        if isinstance(messageText, (str, six.text_type)):
             messageText = '\n'.join([x.strip() for x in messageText.split('\n')])
 
         self.msg_types.append(msg_type)
