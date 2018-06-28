@@ -4,15 +4,11 @@ from Products.MailHost import MailHost
 import email.message
 import six
 
-try:
-    from Products.SecureMailHost.SecureMailHost import SecureMailHost
-except ImportError:
-    SecureMailHost = object
 
 META_TYPE = 'MockMailHost'
 
 
-class MockMailHost(MailHost.MailHost, SecureMailHost):
+class MockMailHost(MailHost.MailHost):
 
     meta_type = META_TYPE
 

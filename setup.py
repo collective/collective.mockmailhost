@@ -32,7 +32,6 @@ setup(name='collective.MockMailHost',
           'Products.GenericSetup',
           'Products.MailHost',
           'Products.CMFCore',
-          'Products.SecureMailHost',
           # -*- Extra requirements: -*-
       ],
       extras_require={
