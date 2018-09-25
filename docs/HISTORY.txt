@@ -7,7 +7,7 @@ Changelog
 - Do not depend on old SecureMailHost any longer.
   [pbauer]
 
-- Python 2 fixes.
+- Python 3 fixes.
   [pbauer]
 
 
