@@ -1,13 +1,17 @@
 Changelog
 =========
 
-1.2.1 (unreleased)
+2.0.0 (unreleased)
 ------------------
+
+Breaking changes:
 
 - Do not depend on old SecureMailHost any longer.
   [pbauer]
 
-- Python 3 fixes.
+New features:
+
+- Python 3 support.
   [pbauer]
 
 
