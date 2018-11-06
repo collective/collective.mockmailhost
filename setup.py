@@ -11,7 +11,7 @@ setup(
         open("README.rst").read(),
         open(os.path.join("collective", "MockMailHost", "tests",
                           "SendEmail.txt")).read(),
-        open(os.path.join("docs", "HISTORY.txt")).read(),
+        open("CHANGES.rst").read(),
     ]),
     # Get more strings from https://pypi.org/classifiers
     classifiers=[
