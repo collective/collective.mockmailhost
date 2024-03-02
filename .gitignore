@@ -12,3 +12,10 @@ eggs
 fake-eggs
 parts
 var
+.coverage
+.python-version
+.vscode/
+include/
+lib/
+lib64
+pyvenv.cfg

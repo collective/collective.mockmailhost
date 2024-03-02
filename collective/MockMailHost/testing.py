@@ -15,6 +15,7 @@ class CollectiveMockMailHostLayer(PloneSandboxLayer):
     def setUpPloneSite(self, portal):
         applyProfile(portal, 'collective.MockMailHost:default')
 
+
 COLLECTIVE_MOCKMAILHOST_FIXTURE = CollectiveMockMailHostLayer()
 
 COLLECTIVE_MOCKMAILHOST_INTEGRATION_TESTING = IntegrationTesting(

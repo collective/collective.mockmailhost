@@ -10,7 +10,9 @@ Breaking changes:
 
 New features:
 
-- *add item here*
+- Add `messages_from`, and `messages_to` to record senders and recipients.
+  This is useful for testing `bcc` that is not present in the message.
+  [mamico]
 
 Bug fixes:
 
