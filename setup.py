@@ -15,6 +15,7 @@ setup(
     ]),
     # Get more strings from https://pypi.org/classifiers
     classifiers=[
+        "Development Status :: 5 - Production/Stable",
         "Framework :: Plone",
         "License :: OSI Approved :: GNU General Public License v2 or later (GPLv2+)",
         "Programming Language :: Python",
