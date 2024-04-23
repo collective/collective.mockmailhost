@@ -1,7 +1,7 @@
 Changelog
 =========
 
-2.0.1 (unreleased)
+3.0.0 (2024-04-23)
 ------------------
 
 Breaking changes:
