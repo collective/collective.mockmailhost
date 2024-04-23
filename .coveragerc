@@ -5,8 +5,7 @@ branch = True
 omit =
     */.buildout/eggs/*
     /usr/*
-    parts/*
-    eggs/*
+    */parts/*
+    */eggs/*
     */bin/*
     */lib/*
-

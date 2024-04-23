@@ -6,7 +6,9 @@ Changelog
 
 Breaking changes:
 
-- *add item here*
+- Remove support for Python versions prior to 3.7 and Plone versions
+  prior to 5.2.
+  [mamico]
 
 New features:
 

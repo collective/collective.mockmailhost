@@ -13,6 +13,7 @@ fake-eggs
 parts
 var
 .coverage
+coverage.json
 .python-version
 .vscode/
 include/
