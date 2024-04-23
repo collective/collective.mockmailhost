@@ -23,13 +23,13 @@ Validate mailhost replacement
 -----------------------------
 
     >>> portal.MailHost
-    <MockMailHost at ...>
+    <collective.MockMailHost.MockMailHost.MockMailHost object at ...>
 
     >>> getToolByName(portal, 'MailHost')
-    <MockMailHost at ...>
+    <collective.MockMailHost.MockMailHost.MockMailHost object at ...>
 
     >>> getUtility(IMailHost)
-    <MockMailHost at ...>
+    <collective.MockMailHost.MockMailHost.MockMailHost object at ...>
 
 
 Send email
@@ -45,13 +45,51 @@ Send email
     >>> portal.MailHost.send(msg, to_, from_)
     >>> len(portal.MailHost.messages)
     1
-    >>> 'To: member@example.com' in portal.MailHost.messages[0]
+    >>> b'To: member@example.com' in portal.MailHost.messages[0]
     True
-    >>> 'From: admin@example.com' in portal.MailHost.messages[0]
+    >>> b'From: admin@example.com' in portal.MailHost.messages[0]
     True
-    >>> 'Dear Sir:' in portal.MailHost.messages[0]
+    >>> b'Dear Sir:' in portal.MailHost.messages[0]
     True
+    >>> portal.MailHost.messages_from
+    ['admin@example.com']
+    >>> portal.MailHost.messages_to
+    [['member@example.com']]
     >>> portal.MailHost.reset()
     >>> len(portal.MailHost.messages)
     0
 
+Send an `email.message.EmailMessage` object with cc/bcc recipients
+
+    >>> from email.message import EmailMessage
+    >>> msg = EmailMessage()
+    >>> msg["Subject"] = "Hello"
+    >>> msg["From"] = "me@example.com"
+    >>> msg["To"] = "you@example.com"
+    >>> msg["Cc"] = "foo@example.com"
+    >>> msg["Bcc"] = "bar@example.com"
+    >>> msg.set_content("""
+    ... This message is for you, foo, and bar.
+    ... """)
+    >>> portal.MailHost.send(msg)
+    >>> len(portal.MailHost.messages)
+    1
+    >>> b'To: you@example.com' in portal.MailHost.messages[0]
+    True
+    >>> b'From: me@example.com' in portal.MailHost.messages[0]
+    True
+    >>> b'Cc: foo@example.com' in portal.MailHost.messages[0]
+    True
+    >>> b'bar@example.com' in portal.MailHost.messages[0]
+    False
+    >>> b'This message is for you, foo, and bar.' in portal.MailHost.messages[0]
+    True
+    >>> len(portal.MailHost.messages)
+    1
+    >>> portal.MailHost.messages_from
+    ['me@example.com']
+    >>> portal.MailHost.messages_to
+    [['you@example.com', 'foo@example.com', 'bar@example.com']]
+    >>> portal.MailHost.reset()
+    >>> len(portal.MailHost.messages)
+    0

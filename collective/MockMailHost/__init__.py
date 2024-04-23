@@ -1,5 +1,6 @@
 from Products.CMFCore import utils as CMFCoreUtils
 
+
 def initialize(context):
     from . import MockMailHost
     tools = (MockMailHost.MockMailHost, )
