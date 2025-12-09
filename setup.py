@@ -3,7 +3,7 @@ from setuptools import setup
 import os
 
 
-version = "4.0.0a1"
+version = "4.0.0a2.dev0"
 
 setup(
     name="collective.MockMailHost",
