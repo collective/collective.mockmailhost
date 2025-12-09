@@ -1,9 +1,10 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="utf-8"?>
 <import-steps>
   <import-step id="mockmailhost-various"
-               version="20010516-01"
                handler="collective.MockMailHost.setuphandlers.setupVarious"
-               title="MockMailHost: replace mailhost">
+               title="MockMailHost: replace mailhost"
+               version="20010516-01"
+  >
     <dependency step="toolset" />
     Various import steps that are not handled by GS import/export
     handlers.
