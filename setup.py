@@ -46,6 +46,7 @@ setup(
         "Products.GenericSetup",
         "Products.MailHost",
         "Products.CMFCore",
+        "Zope",
     ],
     extras_require={
         "test": [
