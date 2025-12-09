@@ -7,16 +7,14 @@ import doctest
 import unittest
 
 
-doctests = (
-    'SendEmail.txt',
-)
+doctests = ("SendEmail.txt",)
 
 
 def setUp(self):
     # this is a workaround, because the profile loaded in the layer is
     # not present in the tests
-    portal = self.globs['layer']['portal']
-    applyProfile(portal, 'collective.MockMailHost:default')
+    portal = self.globs["layer"]["portal"]
+    applyProfile(portal, "collective.MockMailHost:default")
 
 
 def test_suite():
@@ -24,8 +22,8 @@ def test_suite():
     tests = [
         layered(
             doctest.DocFileSuite(
-                f'tests/{test_file}',
-                package='collective.MockMailHost',
+                f"tests/{test_file}",
+                package="collective.MockMailHost",
                 optionflags=optionflags,
                 setUp=setUp,
             ),

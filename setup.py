@@ -4,18 +4,21 @@ from setuptools import setup
 import os
 
 
-version = '4.0.0a1.dev0'
+version = "4.0.0a1.dev0"
 
 setup(
-    name='collective.MockMailHost',
+    name="collective.MockMailHost",
     version=version,
     description="Used for integration testing with Plone",
-    long_description="\n".join([
-        open("README.rst").read(),
-        open(os.path.join("collective", "MockMailHost", "tests",
-                          "SendEmail.txt")).read(),
-        open("CHANGES.rst").read(),
-    ]),
+    long_description="\n".join(
+        [
+            open("README.rst").read(),
+            open(
+                os.path.join("collective", "MockMailHost", "tests", "SendEmail.txt")
+            ).read(),
+            open("CHANGES.rst").read(),
+        ]
+    ),
     # Get more strings from https://pypi.org/classifiers
     classifiers=[
         "Development Status :: 5 - Production/Stable",
@@ -28,28 +31,28 @@ setup(
         "Programming Language :: Python :: 3.12",
         "Programming Language :: Python :: 3.13",
     ],
-    keywords='mock mailhost tests',
-    author='Suresh V.',
-    author_email='suresh@grafware.com',
-    url='https://github.com/collective/collective.mockmailhost',
-    license='GPL',
-    packages=find_packages(exclude=['ez_setup']),
-    namespace_packages=['collective'],
+    keywords="mock mailhost tests",
+    author="Suresh V.",
+    author_email="suresh@grafware.com",
+    url="https://github.com/collective/collective.mockmailhost",
+    license="GPL",
+    packages=find_packages(exclude=["ez_setup"]),
+    namespace_packages=["collective"],
     include_package_data=True,
     zip_safe=False,
     python_requires=">=3.10",
     install_requires=[
-      'setuptools',
-      'Products.GenericSetup',
-      'Products.MailHost',
-      'Products.CMFCore',
+        "setuptools",
+        "Products.GenericSetup",
+        "Products.MailHost",
+        "Products.CMFCore",
     ],
     extras_require={
-      'test': [
-          'plone.app.testing',
-          'plone.testing',
-          'zope.component',
-      ],
+        "test": [
+            "plone.app.testing",
+            "plone.testing",
+            "zope.component",
+        ],
     },
     entry_points="""
     [plone.autoinclude.plugin]

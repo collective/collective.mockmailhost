@@ -4,14 +4,14 @@ import email.message
 import six
 
 
-META_TYPE = 'MockMailHost'
+META_TYPE = "MockMailHost"
 
 
 class MockMailHost(MailHost.MailHost):
 
     meta_type = META_TYPE
 
-    def __init__(self, id=''):
+    def __init__(self, id=""):
         super().__init__(id)
         self.reset()
 
@@ -32,28 +32,27 @@ class MockMailHost(MailHost.MailHost):
         self.messages_to.append(mto)
         self._p_changed = True
 
-    def send(self,
-             messageText,
-             mto=None,
-             mfrom=None,
-             subject=None,
-             encode=None,
-             immediate=False,
-             charset=None,
-             msg_type=None,
-             ):
+    def send(
+        self,
+        messageText,
+        mto=None,
+        mfrom=None,
+        subject=None,
+        encode=None,
+        immediate=False,
+        charset=None,
+        msg_type=None,
+    ):
 
         # messageText may be an MIMEText object, or something else.
         # We onyl want to clean it up if it is a string.
         if isinstance(messageText, str):
-            messageText = '\n'.join([
-                x.strip() for x in messageText.split('\n')
-            ])
+            messageText = "\n".join([x.strip() for x in messageText.split("\n")])
 
         self.msg_types.append(msg_type)
-        super().send(messageText, mto, mfrom,
-                                       subject, encode, immediate, charset,
-                                       msg_type)
+        super().send(
+            messageText, mto, mfrom, subject, encode, immediate, charset, msg_type
+        )
 
     def pop(self, idx=-1):
         result = self.messages.pop(idx)
