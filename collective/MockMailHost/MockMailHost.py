@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from Products.MailHost import MailHost
 
 import email.message
@@ -13,7 +12,7 @@ class MockMailHost(MailHost.MailHost):
     meta_type = META_TYPE
 
     def __init__(self, id=''):
-        super(MockMailHost, self).__init__(id)
+        super().__init__(id)
         self.reset()
 
     def reset(self):
@@ -25,10 +24,7 @@ class MockMailHost(MailHost.MailHost):
 
     def _send(self, mfrom, mto, messageText, debug=False):
         if isinstance(messageText, email.message.Message):
-            if six.PY2:
-                message = messageText.as_string()
-            else:
-                message = email.message_from_string(messageText)
+            message = email.message_from_string(messageText)
         else:
             message = messageText
         self.messages.append(message)
@@ -49,13 +45,13 @@ class MockMailHost(MailHost.MailHost):
 
         # messageText may be an MIMEText object, or something else.
         # We onyl want to clean it up if it is a string.
-        if isinstance(messageText, (str, six.text_type)):
+        if isinstance(messageText, str):
             messageText = '\n'.join([
                 x.strip() for x in messageText.split('\n')
             ])
 
         self.msg_types.append(msg_type)
-        super(MockMailHost, self).send(messageText, mto, mfrom,
+        super().send(messageText, mto, mfrom,
                                        subject, encode, immediate, charset,
                                        msg_type)
 

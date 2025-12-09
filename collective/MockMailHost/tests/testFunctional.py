@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from collective.MockMailHost.testing import \
     COLLECTIVE_MOCKMAILHOST_FUNCTIONAL_TESTING
 from collective.MockMailHost.testing import optionflags
@@ -26,7 +25,7 @@ def test_suite():
     tests = [
         layered(
             doctest.DocFileSuite(
-                'tests/{0}'.format(test_file),
+                f'tests/{test_file}',
                 package='collective.MockMailHost',
                 optionflags=optionflags,
                 setUp=setUp,
