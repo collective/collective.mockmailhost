@@ -99,7 +99,7 @@ New features:
 - Moved to github and changed to README.rst, links in setup.py
   [saily]
 
-- Allow multiple paramters for ``send`` and ``secureSend`` method in
+- Allow multiple parameters for ``send`` and ``secureSend`` method in
   MockMailHost class.  [saily]
 
 

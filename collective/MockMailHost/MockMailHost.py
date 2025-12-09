@@ -44,7 +44,7 @@ class MockMailHost(MailHost.MailHost):
     ):
 
         # messageText may be an MIMEText object, or something else.
-        # We onyl want to clean it up if it is a string.
+        # We only want to clean it up if it is a string.
         if isinstance(messageText, str):
             messageText = "\n".join([x.strip() for x in messageText.split("\n")])
 
