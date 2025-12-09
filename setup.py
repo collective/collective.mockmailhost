@@ -17,14 +17,13 @@ setup(
     classifiers=[
         "Development Status :: 5 - Production/Stable",
         "Framework :: Plone",
+        "Framework :: Plone :: 6.2",
         "License :: OSI Approved :: GNU General Public License v2 or later (GPLv2+)",
         "Programming Language :: Python",
-        "Programming Language :: Python :: 3.7",
-        "Programming Language :: Python :: 3.8",
-        "Programming Language :: Python :: 3.9",
         "Programming Language :: Python :: 3.10",
         "Programming Language :: Python :: 3.11",
         "Programming Language :: Python :: 3.12",
+        "Programming Language :: Python :: 3.13",
     ],
     keywords='mock mailhost tests',
     author='Suresh V.',
@@ -35,13 +34,12 @@ setup(
     namespace_packages=['collective'],
     include_package_data=True,
     zip_safe=False,
-    python_requires=">=3.7",
+    python_requires=">=3.10",
     install_requires=[
       'setuptools',
       'Products.GenericSetup',
       'Products.MailHost',
       'Products.CMFCore',
-      # -*- Extra requirements: -*-
     ],
     extras_require={
       'test': [
@@ -51,9 +49,7 @@ setup(
       ],
     },
     entry_points="""
-    # -*- Entry points: -*-
-
-    [z3c.autoinclude.plugin]
+    [plone.autoinclude.plugin]
     target = plone
     """,
 )
