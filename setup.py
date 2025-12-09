@@ -1,4 +1,3 @@
-from setuptools import find_packages
 from setuptools import setup
 
 import os
@@ -38,14 +37,10 @@ setup(
     author_email="suresh@grafware.com",
     url="https://github.com/collective/collective.mockmailhost",
     license="GPL",
-    packages=find_packages("src"),
-    package_dir={"": "src"},
-    namespace_packages=["collective"],
     include_package_data=True,
     zip_safe=False,
     python_requires=">=3.10",
     install_requires=[
-        "setuptools",
         "Products.GenericSetup",
         "Products.MailHost",
         "Products.CMFCore",
