@@ -22,10 +22,6 @@ New features:
   This is useful for testing `bcc` that is not present in the message.
   [mamico]
 
-Bug fixes:
-
-- *add item here*
-
 
 2.0.0 (2018-11-06)
 ------------------
