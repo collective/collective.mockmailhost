@@ -14,7 +14,9 @@ setup(
         [
             open("README.rst").read(),
             open(
-                os.path.join("collective", "MockMailHost", "tests", "SendEmail.txt")
+                os.path.join(
+                    "src", "collective", "MockMailHost", "tests", "SendEmail.txt"
+                )
             ).read(),
             open("CHANGES.rst").read(),
         ]
@@ -36,7 +38,8 @@ setup(
     author_email="suresh@grafware.com",
     url="https://github.com/collective/collective.mockmailhost",
     license="GPL",
-    packages=find_packages(exclude=["ez_setup"]),
+    packages=find_packages("src"),
+    package_dir={"": "src"},
     namespace_packages=["collective"],
     include_package_data=True,
     zip_safe=False,
