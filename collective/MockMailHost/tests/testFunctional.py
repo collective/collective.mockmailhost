@@ -1,8 +1,7 @@
-from collective.MockMailHost.testing import \
-    COLLECTIVE_MOCKMAILHOST_FUNCTIONAL_TESTING
+from collective.MockMailHost.testing import COLLECTIVE_MOCKMAILHOST_FUNCTIONAL_TESTING
 from collective.MockMailHost.testing import optionflags
-from plone.testing import layered
 from plone.app.testing import applyProfile
+from plone.testing import layered
 
 import doctest
 import unittest
