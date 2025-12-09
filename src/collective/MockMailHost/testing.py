@@ -1,8 +1,8 @@
-# -*- coding: utf-8 -*-
 from plone.app.testing import applyProfile
 from plone.app.testing import PloneSandboxLayer
 from plone.app.testing.layers import FunctionalTesting
 from plone.app.testing.layers import IntegrationTesting
+
 import doctest
 
 
@@ -29,5 +29,7 @@ COLLECTIVE_MOCKMAILHOST_FUNCTIONAL_TESTING = FunctionalTesting(
 )
 
 optionflags = (
-    doctest.REPORT_ONLY_FIRST_FAILURE | doctest.ELLIPSIS | doctest.NORMALIZE_WHITESPACE  # noqa E501
+    doctest.REPORT_ONLY_FIRST_FAILURE
+    | doctest.ELLIPSIS
+    | doctest.NORMALIZE_WHITESPACE  # noqa E501
 )

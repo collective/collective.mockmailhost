@@ -1,4 +1,5 @@
-recursive-include collective *
-recursive-include docs *
+graft src
+graft docs
 include *
+prune news
 global-exclude *.pyc

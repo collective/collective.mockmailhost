@@ -1,0 +1,13 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    >
+
+  <browser:page
+      name="viewemail"
+      for="*"
+      class=".views.MyView"
+      permission="zope2.Public"
+      />
+
+</configure>

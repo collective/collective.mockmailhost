@@ -1,24 +1,20 @@
-# -*- coding: utf-8 -*-
-from collective.MockMailHost.testing import \
-    COLLECTIVE_MOCKMAILHOST_FUNCTIONAL_TESTING
+from collective.MockMailHost.testing import COLLECTIVE_MOCKMAILHOST_FUNCTIONAL_TESTING
 from collective.MockMailHost.testing import optionflags
-from plone.testing import layered
 from plone.app.testing import applyProfile
+from plone.testing import layered
 
 import doctest
 import unittest
 
 
-doctests = (
-    'SendEmail.txt',
-)
+doctests = ("SendEmail.txt",)
 
 
 def setUp(self):
     # this is a workaround, because the profile loaded in the layer is
     # not present in the tests
-    portal = self.globs['layer']['portal']
-    applyProfile(portal, 'collective.MockMailHost:default')
+    portal = self.globs["layer"]["portal"]
+    applyProfile(portal, "collective.MockMailHost:default")
 
 
 def test_suite():
@@ -26,8 +22,8 @@ def test_suite():
     tests = [
         layered(
             doctest.DocFileSuite(
-                'tests/{0}'.format(test_file),
-                package='collective.MockMailHost',
+                f"tests/{test_file}",
+                package="collective.MockMailHost",
                 optionflags=optionflags,
                 setUp=setUp,
             ),

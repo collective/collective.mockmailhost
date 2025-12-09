@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tool-setup>
+  <required class="collective.MockMailHost.MockMailHost.MockMailHost"
+            tool_id="MockMailHost"
+  />
+</tool-setup>
