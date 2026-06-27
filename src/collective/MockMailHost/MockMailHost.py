@@ -2,7 +2,6 @@ from Products.MailHost import MailHost
 
 import email.message
 
-
 META_TYPE = "MockMailHost"
 
 
