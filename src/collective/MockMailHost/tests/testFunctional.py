@@ -6,7 +6,6 @@ from plone.testing import layered
 import doctest
 import unittest
 
-
 doctests = ("SendEmail.txt",)
 
 
